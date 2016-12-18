@@ -1,0 +1,22 @@
+{
+  "name": "learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "env ENV_MODE=dev webpack-dev-server --hot --inline --progress --colors",
+
+    "predeploy": "echo '******开始构建生产环境的代码*********'",
+    "deploy": "rm -rf dist && ENV_MODE=production webpack --progress --colors --bail --profile",
+    "postdeploy": "echo '******构建成功,开始发布内容*****' && chmod +x publish.sh && ./publish.sh build-master"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1",
+    "webpack": "^1.13.3"
+  }
+}
